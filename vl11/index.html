@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js</title>
+</head>
+<body>
+    <script id="myTemplate" type="x-x-template">
+        <div>
+        </div>
+    </script>
+    <div id="app">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                yes: true,
+                no: false,
+            },
+            template: `
+            <div>
+                <template v-if="no">
+                    <h1>Don't show this</h1>
+                    <h2>It's a secret</h2>
+                </template>
+                <template v-if="yes">
+                    <h1>Show this</h1>
+                    <h2>We like to share</h2>
+                </template>
+            </div>
+            `
+        });
+    </script>
+</body>
+</html>
