@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js</title>
+</head>
+<body>
+    <script id="myTemplate" type="x-x-template">
+        <div>
+        </div>
+    </script>
+    <div id="app">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                terms: [
+                    {
+                        termTitle: 'Fuzzy Logic',
+                        termImage: 'https://images.pexels.com/photos/10259191/pexels-photo-10259191.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                        id: '0',
+                        termMean: 'Dla Dla Dla DLa Dla Dla Dla',
+                        termCategory: ['fudare', 'gunare'],
+                    },
+                    {
+                        termTitle: 'Duzzy Logic',
+                        termImage: 'https://images.pexels.com/photos/10259191/pexels-photo-10259191.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                        id: '1',
+                        termMean: 'Fka Fka Fka Fka Fka',
+                        termCategory: ['dunare', 'vunare'],
+                    },
+                    {
+                        termTitle: 'Ruzzy Logic',
+                        termImage: 'https://images.pexels.com/photos/10259191/pexels-photo-10259191.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                        id: '2',
+                        termMean: 'Ela Ela Ela ELa Ela Ela Ela',
+                        termCategory: ['comware', 'funfare'],
+                    },
+                ],
+            },
+            template: `
+                <ul>
+                    <li v-for="term in terms" :key="term.id">
+                        <img :src="term.termImage">
+                        <p><strong>Title:</strong> {{ term.termTitle }}</p>
+                        <p><strong>Mean:</strong> {{ term.termMean }}</p>
+                        <span v-for="(category, index) in term.termCategory">
+                            {{ category }} <span v-if="index < term.termCategory.length -1">, </span>
+                        </span>
+                    </li>
+                </ul>
+            `
+        });
+    </script>
+</body>
+</html>
