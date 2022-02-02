@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js</title>
+</head>
+<body>
+    <script id="myTemplate" type="x-x-template">
+        <div>
+        </div>
+    </script>
+    <div id="app">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                terms: [
+                    {
+                        termTitle: 'Fuzzy Logic',
+                        termImage: 'Bla bla bla',
+                        id: '0',
+                        termMean: 'Dla Dla Dla DLa Dla Dla Dla',
+                    },
+                    {
+                        termTitle: 'Duzzy Logic',
+                        termImage: 'Tra tra tra',
+                        id: '1',
+                        termMean: 'Fka Fka Fka Fka Fka',
+                    },
+                    {
+                        termTitle: 'Ruzzy Logic',
+                        termImage: 'Cla cla cla',
+                        id: '2',
+                        termMean: 'Ela Ela Ela ELa Ela Ela Ela',
+                    },
+                ],
+            },
+            template: `
+                <ul>
+                    <li v-for="term in terms" :key="term.id">
+                        {{ term }}
+                    </li>
+                </ul>
+            `
+        });
+    </script>
+</body>
+</html>
