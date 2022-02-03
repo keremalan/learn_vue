@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js</title>
+</head>
+<body>
+    <script id="myTemplate" type="x-x-template">
+        <div>
+        </div>
+    </script>
+    <div id="app">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                term: {
+                    termTitle: 'Signal',
+                    termMean: 'Signal term mean',
+                    termImage: 'Not added',
+                    termDesctiption: 'Signal term description',
+                    termAuthor: 'Kerem Alan',
+                    termContributor: 'Kerem Alan and Lugat',
+                    termCategory: ['software', 'telecomunication'],
+                    action: function () {
+                        return 'I did an action';
+                    },
+                }
+            },
+            template: `
+                <ul>
+                    <li v-for="(prop, key, index) in term">
+                        {{  index }}) {{ key }}: {{ prop }}
+                    </li>
+                </ul>
+            `
+        });
+    </script>
+</body>
+</html>
